@@ -24,7 +24,7 @@ function Card() {
             <h1>{city.name}</h1>
             <h2> {city.Code}</h2>
             <p> {city.address}</p>
-            <p>{city.discription}</p>
+            <p>{city.description}</p>
           </div>
         );
       })}

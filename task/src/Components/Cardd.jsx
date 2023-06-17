@@ -23,7 +23,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function Cardd({ name, Code, address, discription, img }) {
+export default function Cardd({ name, address, description, img }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -55,8 +55,8 @@ export default function Cardd({ name, Code, address, discription, img }) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Discription</Typography>
-          <Typography paragraph>{discription}</Typography>
+          <Typography paragraph>Description</Typography>
+          <Typography paragraph>{description}</Typography>
         </CardContent>
       </Collapse>
     </Card>

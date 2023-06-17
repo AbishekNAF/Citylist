@@ -22,7 +22,7 @@ function CityList() {
                 name={city.name}
                 Code={city.Code}
                 address={city.address}
-                discription={city.discription}
+                description={city.description}
                 img={city.image}
             />
             );
