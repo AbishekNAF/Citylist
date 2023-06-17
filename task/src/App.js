@@ -5,9 +5,7 @@ import CityList from "./Components/pages/CityList";
 import * as React from "react";
 import "./App.css";
 import AppBar from "@mui/material/AppBar";
-
 import Toolbar from "@mui/material/Toolbar";
-
 import Button from "@mui/material/Button";
 
 function App() {
