@@ -12,12 +12,12 @@ export default function ActionAreaCard() {
         <CardActionArea>
           <CardMedia
             component="img"
-            image="https://i0.wp.com/thetravelertwins.com/wp-content/uploads/2020/07/special-places-in-india.png?fit=500%2C500&ssl=1"
+            image="https://tds.indianeagle.com/wp-content/uploads/2023/02/Famous-Landmarks-in-India.png"
             alt="Famous Place's"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Welcome to India's Famous Places
+              Welcome to India's Famous City
             </Typography>
           </CardContent>
         </CardActionArea>
