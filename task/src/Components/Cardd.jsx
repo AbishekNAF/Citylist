@@ -10,7 +10,8 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
+import DeleteIcon from "@mui/icons-material/Delete";
+import Stack from "@mui/material/Stack";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -23,11 +24,19 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function Cardd({ name, address, description, img }) {
+export default function Cardd({ name, address, description, img, id }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
+  };
+
+  const handleDelete = (id) => {
+    fetch(`https://648bfca08620b8bae7ec029b.mockapi.io/cities/${id}`, {
+      method: "DELETE",
+    }).then(() => console.log("deleted"));
+
+    console.log(id);
   };
 
   return (
@@ -35,7 +44,7 @@ export default function Cardd({ name, address, description, img }) {
       <CardHeader title={name} />
       <CardMedia component="img" height="194" image={img} alt="Paella dish" />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="blue">
           PINCODE-{address}
         </Typography>
       </CardContent>
@@ -43,7 +52,11 @@ export default function Cardd({ name, address, description, img }) {
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-
+        <Stack direction="row" spacing={1}>
+          <IconButton onClick={() => handleDelete(id)} aria-label="delete">
+            <DeleteIcon />
+          </IconButton>
+        </Stack>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}

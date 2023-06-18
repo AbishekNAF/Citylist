@@ -24,6 +24,7 @@ function CityList() {
                 address={city.address}
                 description={city.description}
                 img={city.image}
+                id={city.id}
             />
             );
         })}

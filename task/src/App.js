@@ -1,5 +1,5 @@
 import { Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
-import AddCity from "./Components/pages/AddCity.1";
+// import AddCity from "./Components/pages/AddCity.1";
 import Home from "./Components/pages/Home";
 import CityList from "./Components/pages/CityList";
 import * as React from "react";
@@ -7,6 +7,7 @@ import "./App.css";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
+import { AddCity } from "./Components/pages/AddCity.1";
 
 function App() {
   const navigate = useNavigate();
