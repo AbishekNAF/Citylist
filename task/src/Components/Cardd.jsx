@@ -8,10 +8,11 @@ import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Stack from "@mui/material/Stack";
+import Badge from "@mui/material/Badge";
+import { useState, useEffect } from "react";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -35,9 +36,12 @@ export default function Cardd({ name, address, description, img, id }) {
     fetch(`https://648bfca08620b8bae7ec029b.mockapi.io/cities/${id}`, {
       method: "DELETE",
     }).then(() => console.log("deleted"));
-
-    console.log(id);
+    alert("City has been Deleted");
   };
+  const [like, setLike] = useState(0);
+  useEffect(() => {
+    console.log("Total Click", like);
+  }, []);
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -49,8 +53,15 @@ export default function Cardd({ name, address, description, img, id }) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+        <IconButton
+          aria-label="likebutton"
+          onClick={() => setLike(like + 1)}
+          color="primary"
+        >
+          {" "}
+          <Badge badgeContent={like} color="primary">
+            ❤
+          </Badge>
         </IconButton>
         <Stack direction="row" spacing={1}>
           <IconButton onClick={() => handleDelete(id)} aria-label="delete">

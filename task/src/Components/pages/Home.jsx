@@ -17,7 +17,7 @@ export default function ActionAreaCard() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Welcome to India's Famous City
+              Welcome to India's Famous City ❤
             </Typography>
           </CardContent>
         </CardActionArea>

@@ -1,8 +1,8 @@
-import React from 'react'
-import Cardd  from '../Cardd';
+import React from "react";
+import Cardd from "../Cardd";
 import { useState, useEffect } from "react";
 function CityList() {
-    const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
   useEffect(() => {
     fetch("https://648bfca08620b8bae7ec029b.mockapi.io/cities", {
       method: "GET",
@@ -14,23 +14,23 @@ function CityList() {
       });
   }, []);
   return (
-    <div className='main'>
-        <div className='container'>
+    <div className="main">
+      <div className="container">
         {data.map((city) => {
-            return (
+          return (
             <Cardd
-                name={city.name}
-                Code={city.Code}
-                address={city.address}
-                description={city.description}
-                img={city.image}
-                id={city.id}
+              name={city.name}
+              Code={city.Code}
+              address={city.address}
+              description={city.description}
+              img={city.image}
+              id={city.id}
             />
-            );
+          );
         })}
-        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default CityList
+export default CityList;

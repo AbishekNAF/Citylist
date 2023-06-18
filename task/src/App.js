@@ -1,5 +1,4 @@
-import { Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
-// import AddCity from "./Components/pages/AddCity.1";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./Components/pages/Home";
 import CityList from "./Components/pages/CityList";
 import * as React from "react";

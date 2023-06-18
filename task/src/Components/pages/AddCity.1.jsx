@@ -10,7 +10,6 @@ export function AddCity() {
   const [image, setImage] = useState("");
 
   const navigate = useNavigate();
-
   return (
     <div>
       <div className="Add-City-form">
@@ -42,29 +41,31 @@ export function AddCity() {
           onChange={(event) => setImage(event.target.value)}
           value={image}
         />
-        <Button
-          variant="contained"
-          onClick={() => {
-            const AddCity = {
-              name: name,
-              address: address,
-              description: description,
-              image: image,
-            };
-
-            fetch(`https://648bfca08620b8bae7ec029b.mockapi.io/cities`, {
-              method: "POST",
-              body: JSON.stringify(AddCity),
-              headers: {
-                "Content-Type": "application/json",
-              },
-            })
-              .then((res) => res.json())
-              .then(() => navigate("/AddCity"));
-          }}
-        >
-          Add City
-        </Button>
+        <h1>
+          <Button
+            variant="contained"
+            onClick={() => {
+              const AddCity = {
+                name: name,
+                address: address,
+                description: description,
+                image: image,
+              };
+              fetch(`https://648bfca08620b8bae7ec029b.mockapi.io/cities`, {
+                method: "POST",
+                body: JSON.stringify(AddCity),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              })
+                .then((res) => res.json())
+                .then(() => navigate("/AddCity"));
+              alert("City Added");
+            }}
+          >
+            Add City
+          </Button>
+        </h1>
       </div>
     </div>
   );
