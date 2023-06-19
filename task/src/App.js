@@ -7,6 +7,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import { AddCity } from "./Components/pages/AddCity.1";
+import EditCity from "./Components/pages/EditCity";
 
 function App() {
   const navigate = useNavigate();
@@ -47,6 +48,7 @@ function App() {
         <Route path="/CityList" element={<CityList />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/AddCity" element={<AddCity />} />
+        <Route path="/CityList/Edit/:cityid" element={<EditCity />} />
       </Routes>
     </div>
   );
