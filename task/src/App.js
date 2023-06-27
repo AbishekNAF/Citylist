@@ -11,7 +11,7 @@ import EditCity from "./Components/pages/EditCity";
 
 function App() {
   const navigate = useNavigate();
-  //ABI
+  //CRUD
 
   return (
     <div className="App">
