@@ -47,6 +47,7 @@ function App() {
       </AppBar>
 
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/CityList" element={<CityList />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/AddCity" element={<AddCity />} />
